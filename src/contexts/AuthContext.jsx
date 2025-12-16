@@ -1,7 +1,7 @@
 // src/contexts/AuthContext.jsx
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import api from '../services/api'; // 🎯 Importa a instância do Axios
-import { supabase } from '../config/supabaseClient';
+//import { supabase } from '../config/supabaseClient';
 import { useNavigate } from 'react-router-dom';
 
 const AuthContext = createContext();
@@ -58,14 +58,14 @@ export const AuthProvider = ({ children }) => {
     setIsLoggingOut(true); 
 
     try {
-        // 1. CHAMA O MÉTODO DE SAIR DO SUPABASE
+       /*  // 1. CHAMA O MÉTODO DE SAIR DO SUPABASE
         // *Somente* se o logout não foi iniciado pelo próprio servidor/Supabase (isServerInitiated = false)
         if (!isServerInitiated) { 
              const { error } = await supabase.auth.signOut();
              if (error) {
                  console.error('Erro ao chamar signOut no Supabase:', error.message);
              }
-        }
+        } */
         
         // 2. LIMPEZA NO LADO DO CLIENTE
         setUser(null);
@@ -137,7 +137,7 @@ export const AuthProvider = ({ children }) => {
         
     }, []); // 👈 O array vazio garante que ele rode APENAS uma vez
 
-    useEffect(() => {
+    /* useEffect(() => {
     const { data: listener } = supabase.auth.onAuthStateChange((_event, session) => {
         if (_event === 'SIGNED_OUT' || (_event === 'TOKEN_REFRESHED' && !session)) {
             // Se o evento foi disparado pelo Supabase, passamos 'true'
@@ -157,7 +157,7 @@ export const AuthProvider = ({ children }) => {
 
     // Adicione 'isLoggingOut' para garantir que o efeito seja re-avaliado, se necessário,
     // embora [logout] deva ser suficiente por agora.
-}, [logout, isLoggingOut]);
+}, [logout, isLoggingOut]); */
         
        
 
