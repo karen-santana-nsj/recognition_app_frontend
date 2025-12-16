@@ -134,6 +134,9 @@ export const AuthProvider = ({ children }) => {
             api.defaults.headers.common['Authorization'] = `Bearer ${storedToken}`;
             console.log("Token do Axios recarregado para chamadas autorizadas.");
         }
+
+            // 🎯 Este é o ponto crucial: O loading deve terminar
+        setLoading(false);
         
     }, []); // 👈 O array vazio garante que ele rode APENAS uma vez
 
