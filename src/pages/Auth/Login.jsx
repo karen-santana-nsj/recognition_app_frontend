@@ -36,7 +36,7 @@ const Login = () => {
                         <Sparkles className="w-6 h-6 text-white" />
                     </div>
                     <h2 className="mt-6 text-4xl font-extrabold text-gray-900">
-                        App de Reconhecimento
+                        Reconhecimento
                     </h2>
                     <p className="mt-2 text-center text-sm text-gray-600">
                         Faça login para enviar e receber reconhecimentos.
